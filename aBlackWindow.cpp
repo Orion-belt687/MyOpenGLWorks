@@ -3,6 +3,21 @@
 #include<GLFW/glfw3.h>
 
 using namespace std;
+
+void frameBufferSizeCallBack(GLFWwindow* window,int width,int hight){//窗口大小的回调函数
+    cout<<"大小改变为："<<width<<"*"<<hight<<endl;
+}
+
+void keyCallback(GLFWwindow* window,int key,int scancode,int action,int mod){
+    cout<<"键值为"<<":"<<key<<"被"<<(action==1?"按下":"抬起")<<endl;
+    if(mod==GLFW_MOD_CONTROL||mod==GLFW_MOD_SHIFT){
+        cout<<"按下了"<<(mod==GLFW_MOD_CONTROL?"ctrl":"shift")<<endl;
+    }
+    // if(key==GLFW_KEY_ESCAPE&&action==GLFW_PRESS){
+    //     glfwSetWindowShouldClose(window,true);
+    // }
+}
+
 int main(){
     //初始化glfw
     glfwInit();
@@ -16,6 +31,11 @@ int main(){
     GLFWwindow* window=glfwCreateWindow(1600,1000,"An Empty Window",NULL,NULL);
     //把这个窗口设置为opengl的绘制舞台
     glfwMakeContextCurrent(window);
+
+    //监听窗口大小变化
+    glfwSetFramebufferSizeCallback(window,frameBufferSizeCallBack);
+    //监听键盘
+    glfwSetKeyCallback(window,keyCallback);
 
     //窗体循环
     while(!glfwWindowShouldClose(window)){
