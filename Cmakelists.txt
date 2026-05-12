@@ -9,6 +9,6 @@ link_directories(SYSTEM ${CMAKE_SOURCE_DIR}/thirdparty/lib)
 set(CMAKE_CXX_STANDARD 17)
 
 
-add_executable(GLFW_WINDOW "main.cpp" "glad.c")
+add_executable(GLFW_WINDOW "aBlackWindow.cpp" "glad.c")
 
 target_link_libraries(GLFW_WINDOW glfw3.lib)
