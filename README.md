@@ -1,0 +1,3 @@
+一个openGL作业库。
+代码注释使用GBK，所以可能会出现乱码情况。
+改变生成文件的话，请改变cmake里面的add_executable文件。
