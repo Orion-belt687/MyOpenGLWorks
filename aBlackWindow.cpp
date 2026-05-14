@@ -1,4 +1,5 @@
 #include<iostream>
+#include<assert.h>
 #include<glad/glad.h>
 #include<GLFW/glfw3.h>
 
@@ -16,6 +17,29 @@ void keyCallback(GLFWwindow* window,int key,int scancode,int action,int mod){
     // if(key==GLFW_KEY_ESCAPE&&action==GLFW_PRESS){
     //     glfwSetWindowShouldClose(window,true);
     // }
+}
+
+void checkError(){//错误检查函数
+    GLenum err=glGetError();
+    if(err!=GL_NO_ERROR){
+        switch(err){
+            case GL_INVALID_ENUM:
+                cout<<"无效枚举"<<endl;
+                break;
+            case GL_INVALID_VALUE:
+                cout<<"无效值"<<endl;
+                break;
+            case GL_INVALID_OPERATION:
+                cout<<"无效操作"<<endl;
+                break;
+            case GL_OUT_OF_MEMORY:
+                cout<<"内存不足"<<endl;
+                break;
+            default:
+               cout<<"unknown error"<<endl;
+        }
+        assert(false);//根据传入的bool断定程序的运行（true）or停止（false)
+    }
 }
 
 int main(){
@@ -60,6 +84,8 @@ int main(){
         //接下来要渲染，但是还没学
 
 
+        //先搞一个错误检查
+        checkError();
         //切换双缓存
         glfwSwapBuffers(window);
     }
