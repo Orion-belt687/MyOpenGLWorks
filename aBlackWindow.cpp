@@ -37,11 +37,30 @@ int main(){
     //监听键盘
     glfwSetKeyCallback(window,keyCallback);
 
+
+    //用GLAD加载opengl函数
+    if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
+        cout<<"Failed to initialize GLAD"<<endl;
+    }
+
+    //设置视口
+    glViewport(0,0,20,90);
+    //设置清屏颜色
+    glClearColor(0.2f,0.2f,1.0f,1.0f);
+
     //窗体循环
     while(!glfwWindowShouldClose(window)){
         //检查有没有触发什么事件(比如键盘输入、鼠标移动等)
         glfwPollEvents();
         //交换颜色缓冲
+        //glfwSwapBuffers(window);
+        //清理画布
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        //接下来要渲染，但是还没学
+
+
+        //切换双缓存
         glfwSwapBuffers(window);
     }
 
