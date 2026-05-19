@@ -1,8 +1,10 @@
 cmake_minimum_required(VERSION 3.12)
 
-
-#project(GLFW_WINDOW)
-project(Bezel)
+###
+###
+###
+#project(GLFW_WINDOW)  #我的第一个opengl文件
+project(Bezel)#贝塞尔曲线作业
 
 include_directories(SYSTEM ${CMAKE_SOURCE_DIR}/thirdparty/include)
 link_directories(SYSTEM ${CMAKE_SOURCE_DIR}/thirdparty/lib)
