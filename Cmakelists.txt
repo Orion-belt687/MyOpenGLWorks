@@ -1,10 +1,14 @@
 cmake_minimum_required(VERSION 3.12)
 
-###
-###
-###
-#project(GLFW_WINDOW)  #我的第一个opengl文件
-project(Bezel)#贝塞尔曲线作业
+#######
+project(GLFW_WINDOW)  #我的第一个opengl文件,这里存放我的学习产生的脚本
+
+
+#######
+project(Bezel)#贝塞尔曲线作业，这里存放作业的四个脚本
+
+
+
 
 include_directories(SYSTEM ${CMAKE_SOURCE_DIR}/thirdparty/include)
 link_directories(SYSTEM ${CMAKE_SOURCE_DIR}/thirdparty/lib)
@@ -12,8 +16,14 @@ link_directories(SYSTEM ${CMAKE_SOURCE_DIR}/thirdparty/lib)
 set(CMAKE_CXX_STANDARD 17)
 
 
-#add_executable(GLFW_WINDOW "aBlackWindow.cpp" "glad.c")
+add_executable(GLFW_WINDOW "aBlackWindow.cpp" "glad.c")
+
+########
 add_executable(Bezel "Bezel.cpp" "glad.c")
 
-#target_link_libraries(GLFW_WINDOW glfw3.lib)
+########
+
+target_link_libraries(GLFW_WINDOW glfw3.lib)
+
+########
 target_link_libraries(Bezel glfw3.lib)
