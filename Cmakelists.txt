@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.12)
 
 #######
-project(GLFW_WINDOW)  #我的第一个opengl文件,这里存放我的学习产生的脚本
+project(GLFW_WINDOW)  #锟揭的碉拷一锟斤拷opengl锟侥硷拷,锟斤拷锟斤拷锟斤拷锟揭碉拷学习锟斤拷锟斤拷锟侥脚憋拷
 
 
 #######
-project(Bezel)#贝塞尔曲线作业，这里存放作业的四个脚本
+project(Bezel)#锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷业锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷业锟斤拷锟侥革拷锟脚憋拷
 
 
 
@@ -22,8 +22,14 @@ add_executable(GLFW_WINDOW "aBlackWindow.cpp" "glad.c")
 add_executable(Bezel "Bezel.cpp" "glad.c")
 
 ########
+add_executable(aCube "aCube.cpp" "glad.c")
+
+########
 
 target_link_libraries(GLFW_WINDOW glfw3.lib)
 
 ########
 target_link_libraries(Bezel glfw3.lib)
+
+########
+target_link_libraries(aCube glfw3.lib)
