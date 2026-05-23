@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.12)
 
 #######
-project(GLFW_WINDOW)  #�ҵĵ�һ��opengl�ļ�,�������ҵ�ѧϰ�����Ľű�
+project(GLFW_WINDOW)
 
 
 #######
@@ -25,6 +25,9 @@ add_executable(Bezel "Bezel.cpp" "glad.c")
 add_executable(aCube "aCube.cpp" "glad.c")
 
 ########
+add_executable(Light "Light.cpp" "glad.c")
+
+########
 
 target_link_libraries(GLFW_WINDOW glfw3.lib)
 
@@ -33,3 +36,6 @@ target_link_libraries(Bezel glfw3.lib)
 
 ########
 target_link_libraries(aCube glfw3.lib)
+
+########
+target_link_libraries(Light glfw3.lib)
