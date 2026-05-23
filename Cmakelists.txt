@@ -1,7 +1,12 @@
 cmake_minimum_required(VERSION 3.12)
 
-
+#######
 project(GLFW_WINDOW)
+
+
+#######
+project(Bezel)#������������ҵ����������ҵ���ĸ��ű�
+
 
 include_directories(SYSTEM ${CMAKE_SOURCE_DIR}/thirdparty/include)
 link_directories(SYSTEM ${CMAKE_SOURCE_DIR}/thirdparty/lib)
@@ -11,4 +16,24 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(GLFW_WINDOW "aBlackWindow.cpp" "glad.c")
 
+########
+add_executable(Bezel "Bezel.cpp" "glad.c")
+
+########
+add_executable(aCube "aCube.cpp" "glad.c")
+
+########
+add_executable(Light "Light.cpp" "glad.c")
+
+########
+
 target_link_libraries(GLFW_WINDOW glfw3.lib)
+
+########
+target_link_libraries(Bezel glfw3.lib)
+
+########
+target_link_libraries(aCube glfw3.lib)
+
+########
+target_link_libraries(Light glfw3.lib)
