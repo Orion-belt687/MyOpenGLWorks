@@ -8,8 +8,6 @@ project(GLFW_WINDOW)
 project(Bezel)#������������ҵ����������ҵ���ĸ��ű�
 
 
-
-
 include_directories(SYSTEM ${CMAKE_SOURCE_DIR}/thirdparty/include)
 link_directories(SYSTEM ${CMAKE_SOURCE_DIR}/thirdparty/lib)
 
