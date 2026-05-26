@@ -1,8 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
 
-#######
-project(GLFW_WINDOW)
-
 
 #######
 project(Bezel)#������������ҵ����������ҵ���ĸ��ű�
