@@ -21,6 +21,9 @@ add_executable(aCube "aCube.cpp" "glad.c")
 ########
 add_executable(Light "Light.cpp" "glad.c")
 
+########
+add_executable(MyMainWork "MyMainWork.cpp" "glad.c")
+
 #######
 
 # target_link_libraries(GLFW_WINDOW glfw3.lib)
@@ -33,3 +36,6 @@ target_link_libraries(aCube glfw3.lib)
 
 ########
 target_link_libraries(Light glfw3.lib)
+
+########
+target_link_libraries(MyMainWork glfw3.lib)
