@@ -1067,7 +1067,7 @@ int main() {
         g_deltaTime = currentTime - lastFrameTime;
         lastFrameTime = currentTime;
 
-        if (g_paused)
+        if (!g_paused)
             g_animTime += g_deltaTime;
 
         glfwPollEvents();
@@ -1115,13 +1115,15 @@ int main() {
         k0w = k0; k1w = k1; k2w = k2; k3w = k3; k4w = k4; k5w = k5;
 
         // update planet positions
-        for (auto& p : g_planets) {
-            if (!p.isMoon) {
-                p.orbitAngle += p.orbitSpeed * g_deltaTime;
-                p.rotationAngle += p.rotationSpeed * g_deltaTime;
-            } else {
-                p.moonOrbitAngle += p.moonOrbitSpeed * g_deltaTime;
-                p.rotationAngle += p.rotationSpeed * g_deltaTime;
+        if (!g_paused) {
+            for (auto& p : g_planets) {
+                if (!p.isMoon) {
+                    p.orbitAngle += p.orbitSpeed * g_deltaTime;
+                    p.rotationAngle += p.rotationSpeed * g_deltaTime;
+                } else {
+                    p.moonOrbitAngle += p.moonOrbitSpeed * g_deltaTime;
+                    p.rotationAngle += p.rotationSpeed * g_deltaTime;
+                }
             }
         }
 
